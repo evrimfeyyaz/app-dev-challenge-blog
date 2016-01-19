@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>App Dev Challenge - Making $5000 in 6 Months</title>
+  
+  <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900|Source+Sans+Pro:400,400italic,700' %>
+  <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity: 'sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin: 'anonymous' %>
+  <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', integrity: 'sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==', crossorigin: 'anonymous' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="jumbotron headline-container">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">AppDev<span class="logo-bold">Challenge</span></a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Contact Me</a></li>
+          <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
+          <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
+          <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
+          <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-rss fa-fw"></i></a></li>
+          <li class="visible-xs"><a href="#">Facebook</a></li>
+          <li class="visible-xs"><a href="#">Twitter</a></li>
+          <li class="visible-xs"><a href="#">Google+</a></li>
+          <li class="visible-xs"><a href="#">RSS</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1 class="headline">
+          I am challenging myself<br>
+          <span>to learn iOS development and earn $5000 in six months.</span>
+        </h1>
+        <section class="mail-list-top">
+          <p class="text-center">
+            I will share all my successes and failures, join my list to get updates. 
+          </p>
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="name" class="sr-only">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">E-Mail</label>
+              <input type="email" class="form-control" id="email" placeholder="E-Mail">
+            </div>
+            <button type="submit" class="btn btn-primary">Join the List</button>
+          </form>
+        </section>
+        <a class="chevron-down" href="#">
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<%= yield %>
+
+<footer class="bg-dark">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 hidden-xs hidden-sm">
+        <h1 class="h2 logo">AppDev<span class="logo-bold">Challenge</span></h1>
+        <nav class="navbar-bottom">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact Me</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-md-4">
+        <h1 class="h2">Join the List</h1>
+        <section class="mail-list-bottom">
+          <p class="text-center">
+            I will share all my successes and failures, join my list to get updates. 
+          </p>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="E-Mail">
+            </div>
+            <button type="submit" class="btn btn-primary">Join the List</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="col-md-4">
+        <h1 class="h2 hidden-xs hidden-sm">Follow Me</h1>
+        <ul class="social-bottom list-inline">
+            <li class="social-icon"><a href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
+            <li class="social-icon"><a href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
+            <li class="social-icon"><a href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
+            <li class="social-icon"><a href="#"><i class="fa fa-rss fa-fw"></i></a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' %>
+<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', integrity: "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin: "anonymous" %>
+<%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

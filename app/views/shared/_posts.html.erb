@@ -1,0 +1,24 @@
+<% if posts.any? %>
+  <section class="container">
+    <div class="grid">
+      <% posts.each do |post| %>
+        <article class="grid-item col-sm-6 col-md-4">
+          <div class="grid-item-content thumbnail">
+            <a href="#"><%= image_tag post.image, alt: post.title %></a>
+            <div class="caption">
+              <p class="meta">
+                <%= link_to post.category.title, post.category %>
+                <span class="circle-symbol">●</span>
+                <%= post.published_at %>
+              </p>
+              <a href="#" class="post-title"><h1 class="h2"><%= post.title %></h1></a>
+              <p class="excerpt">
+                <%= excerpt(post.content, '', separator: ' ', radius: 15) %>
+              </p>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </section>
+<% end %>
