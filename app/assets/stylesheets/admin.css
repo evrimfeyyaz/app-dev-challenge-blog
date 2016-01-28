@@ -1,0 +1,350 @@
+/*!
+ * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+  font-family: 'Source Sans Pro';
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f6f6f6;
+}
+
+.sidebar .sidebar-nav.navbar-collapse {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-admin {
+  margin-top: 10px;
+}
+
+.table-responsive {
+  margin-top: 30px;
+}
+
+.navbar-header {
+  float: none;
+}
+
+.navbar-brand {
+  height: 100%;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 0;
+}
+
+.navbar-inverse .navbar-nav li.social-icon>a {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.navbar {
+  font-family: 'Alegreya Sans SC';
+}
+
+.navbar a.navbar-brand {
+  color: #fff;
+  font-size: 1.23em;
+  line-height: 0.8;
+  padding-right: 30px;
+  padding-top: 19px;
+}
+
+.logo {
+  font-size: 2em;
+  line-height: 0.8;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.panel {
+  padding: 70px 30px;
+  border-radius: 10px;
+}
+
+.panel-login {
+  margin-top: 100px;
+}
+
+.sidebar a {
+  color: #acacac;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-toggle {
+  margin-top: 17px;
+}
+
+.sidebar-nav ul li a:focus,
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+  background: none;
+}
+
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover {
+  background: none;
+}
+
+.nav>li>a {
+  padding: 5px 0 5px 30px;
+}
+
+.navbar .navbar-brand {
+  font-size: 24px;
+}
+
+.logo-bold {
+  font-weight: 900;
+}
+
+.navbar a {
+  border: none;
+}
+
+.navbar a:hover {
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Alegreya Sans SC';
+  font-weight: 900;
+}
+
+h1.headline {
+  color: #fff;
+  font-size: 42px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+h1.headline span {
+  display: block;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+i.fa {
+  margin-right: 10px;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+  background: none;
+}
+
+.sidebar-nav ul li a.active {
+  background-color: #000;
+}
+
+.container-fluid {
+  padding: 0 30px 0;
+}
+
+.pages {
+  font-family: 'Alegreya Sans SC';
+  font-size: 24px;
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0 20px;
+}
+
+.pages li {
+  display: inline-block;
+  margin: 0 auto 30px;
+  padding: 0 9px 3px 30px;
+  border-radius: 5px;
+}
+
+.pages li.selected {
+  padding: 0 12px 3px 12px;
+  margin-left: 18px;
+  display: inline-block;
+  background-color: #f1f0f0;
+  color: #b5b5b5;
+  -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.2);
+  -ms-transform: translate(0,100px); /* IE 9 */
+  -webkit-transform: translate(50px,100px); /* Safari */
+  transform: translate(0, 2px);
+}
+
+.btn {
+  font-family: 'Alegreya Sans SC';
+  font-size: 20px;
+  padding: 3px 20px 3px 20px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: none;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.btn:focus,
+.btn:hover {
+  outline: 0;
+  outline: thin dotted \9;
+  border: none;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+  background-color: #e9e9e9;
+}
+
+.btn-ctrl {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  margin-top: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #bcbcbc;
+  color: #fff;
+}
+
+.btn-ctrl:hover,
+.btn-ctrl:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.form-horizontal .control-label {
+  padding-top: 4px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.settings-form {
+  margin-top: 30px;
+}
+
+p.file-info {
+  font-family: 'Alegreya Sans SC';
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+p.file-name label {
+  font-size: 18px;
+}
+
+p.file-name {
+  margin: 0;
+}
+
+.select-all {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.medium {
+  padding: 0;
+}
+
+.nav.nav-pills>li>a {
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+
+input[type=file] {
+  font-size: 12px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+@media(min-width: 768px) {
+  .sidebar {
+    z-index: 1;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+  }
+
+  .container-fluid {
+    margin: 0 0 30px 250px;
+  }
+
+  .flash {
+    margin: 0 0 0 250px;
+  }
+
+  .pull-right-md {
+    float: right!important;
+  }
+
+  .text-right-md {
+    text-align: right;
+  }
+
+  .table-responsive {
+    margin-top: 40px;
+  }
+
+  .btn-admin {
+    margin-top: 22px;
+  }
+
+  .select-all {
+    margin-top: 0;
+  }
+
+  .medium {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .pages {
+    font-size: 18px;
+  }
+
+  .pages li {
+    padding: 0 9px 3px 10px;
+  }
+
+  .pages li.selected {
+    padding: 0 9px 3px 9px;
+    margin-left: 1px;
+  }
+
+  .pages li:first-child {
+    margin-right: 20px;
+  }
+
+  .pages li:last-child {
+    margin-left: 20px;
+  }
+
+}

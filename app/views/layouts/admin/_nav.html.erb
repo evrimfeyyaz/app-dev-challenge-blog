@@ -1,0 +1,33 @@
+<nav class="navbar sidebar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand pull-right-md text-right" href="index.html">AppDev<span class="logo-bold">Challenge</span><br>Admin</a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="active">
+                <a class="active" href="index.html"><i class="fa fa-newspaper-o fa-fw"></i> Posts</a>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-hashtag fa-fw"></i> Categories</a>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-picture-o fa-fw"></i> Media</a>
+            </li>
+            <li>
+                <%= link_to admin_logout_path do %>
+                  <i class="fa fa-sign-out fa-fw"></i> Log Out
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+    <!-- /.navbar-static-side -->
+</nav>

@@ -1,0 +1,39 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <h1>Posts</h1>
+    </div>
+    <div class="col-sm-8 text-right-md">
+      <%= link_to "New Post", new_admin_post_path, class: "btn-admin btn btn-primary" %>
+      <%= link_to "Remove Selected", admin_posts_path, class: "btn-admin btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><input type="checkbox"></th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Date Created</th>
+              <th>Date Published</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @posts.each do |post| %>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><%= link_to post.title, post %></td>
+                <td><%= post.category.title %></td>
+                <td><%= post.created_at %></td>
+                <td><%= post.published_at %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
