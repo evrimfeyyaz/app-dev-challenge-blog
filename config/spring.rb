@@ -1,0 +1,1 @@
+Spring.watch "config/preferences.yml"
