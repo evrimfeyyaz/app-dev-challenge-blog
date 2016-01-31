@@ -1,3 +1,6 @@
+//= require jquery_ujs
+//= require turbolinks
+
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size
@@ -44,4 +47,16 @@ $('a[data-toggle=modal]').each(function () {
       $container.masonry();
     }, 250);
   });
+});
+
+$('input[name=preview_button]').click(function(e) {
+  $('.new_post, .edit_post').prop('target', '_blank');
+});
+
+$('input[name=commit], input[name=save_and_publish_button]').click(function(e) {
+  $('.new_post, .edit_post').prop('target', '_self');
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
 });

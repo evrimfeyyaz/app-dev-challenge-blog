@@ -115,6 +115,11 @@ body {
   border: none;
 }
 
+a.action-icon:hover,
+a.action-icon:focus {
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Alegreya Sans SC';
@@ -134,7 +139,7 @@ h1.headline span {
   line-height: 24px;
 }
 
-i.fa {
+.sidebar-nav i.fa {
   margin-right: 10px;
 }
 

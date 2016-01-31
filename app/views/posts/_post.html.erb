@@ -1,0 +1,43 @@
+<section class="container post">
+  <% if @post.image.present? %>
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <%= image_tag @post.image, alt: @post.title, class: 'post-image full-width' %>
+      </div>  
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10">
+      <h1 class="main-title text-center"><%= @post.title %></h1>
+
+      <p class="meta text-center">
+            <%= link_to @post.category.title, @post.category %>
+            <span class="circle-symbol">●</span>
+            <%= published_at(@post) %>
+      </p>
+    
+      <%= markdown @post.content %>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10">
+      <div class="mail-list-post text-center">
+        <h1>Enjoyed the Article?</h1>
+        <section>
+          <p>
+            I will share all my successes and failures, join my list to get updates. 
+          </p>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="E-Mail">
+            </div>
+            <button type="submit" class="btn btn-primary">Join the List</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>

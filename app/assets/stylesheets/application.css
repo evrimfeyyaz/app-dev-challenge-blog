@@ -426,6 +426,10 @@ footer ul li a:focus {
   line-height: 1.5;
 }
 
+.container.post {
+  margin-bottom: 30px;
+}
+
 .quote {
   color: #7e7e7e;
 }

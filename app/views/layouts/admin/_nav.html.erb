@@ -12,14 +12,20 @@
 
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
-            <li class="active">
-                <a class="active" href="index.html"><i class="fa fa-newspaper-o fa-fw"></i> Posts</a>
+            <li>
+                <%= link_to admin_posts_path do %>
+                <i class="fa fa-newspaper-o fa-fw"></i> Posts
+                <% end %>
             </li>
             <li>
-                <a href="index.html"><i class="fa fa-hashtag fa-fw"></i> Categories</a>
+                <%= link_to admin_categories_path do %>
+                <i class="fa fa-hashtag fa-fw"></i> Categories
+                <% end %>
             </li>
             <li>
-                <a href="index.html"><i class="fa fa-picture-o fa-fw"></i> Media</a>
+                <%= link_to admin_media_path do %>
+                <i class="fa fa-picture-o fa-fw"></i> Media
+                <% end %>
             </li>
             <li>
                 <%= link_to admin_logout_path do %>

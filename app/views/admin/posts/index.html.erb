@@ -19,6 +19,7 @@
               <th>Category</th>
               <th>Date Created</th>
               <th>Date Published</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -29,6 +30,26 @@
                 <td><%= post.category.title %></td>
                 <td><%= post.created_at %></td>
                 <td><%= post.published_at %></td>
+                <td>
+                  <%= link_to [:admin, post],
+                        class: 'action-icon',
+                        alt: "Delete post",
+                        "data-toggle" => "tooltip",
+                        "data-placement" => "top",
+                        title: "Delete post",
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } do %>
+                    <i class="fa fa-trash fa-fw"></i>
+                  <% end %>
+                  <%= link_to edit_admin_post_path(post),
+                        class: 'action-icon',
+                        alt: "Edit post",
+                        "data-toggle" => "tooltip",
+                        "data-placement" => "top",
+                        title: "Edit post" do %>
+                    <i class="fa fa-pencil fa-fw"></i>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>

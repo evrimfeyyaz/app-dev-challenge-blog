@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
 
   namespace :admin do
-    resources :posts, except: [:show]
     get 'login', to: 'sessions#new'
     get 'logout', to: 'sessions#destroy'
     resource :sessions, only: [:create, :destroy]
+    resources :posts, except: [:show]
+    resources :categories, except: [:show]
+    resources :media
   end
 end
