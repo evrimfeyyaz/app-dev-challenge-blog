@@ -1,0 +1,16 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-md-10">
+      <h1>New Image</h1>
+      <%= form_for [:admin, @image], html: { multipart: true } do |f| %>
+        <div class="form-group">
+          <%= f.label :data, class: "sr-only" %>        
+          <%= f.file_field :data, class: "form-control", placeholder: "Image" %>
+        </div>
+        <div class="text-center">
+          <%= f.submit "Upload", class: "btn btn-default" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <h1>Images</h1>
+    </div>
+    <div class="col-sm-10 text-right-md">
+      <%= link_to "Upload Image", new_admin_image_path, class: "btn-admin btn btn-primary" %>
+      <a href="#" class="btn-admin btn btn-danger">Remove Selected</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <label class="small select-all">
+        <input type="checkbox">&nbsp;&nbsp;&nbsp;Select All
+      </label>
+    </div>
+  </div>
+  <div class="grid">
+    <% @images.each do |image| %>
+      <article class="grid-item col-sm-6 col-md-4 medium">
+        <div class="grid-item-content thumbnail clearfix">
+          <div>
+            <%= link_to [:admin, image] do %>
+              <%= image_tag image.data.url(:thumb_2x) %>
+            <% end %>
+          </div>
+          <div class="caption">
+            <p class="file-name">
+              <label class="small">
+                <input type="checkbox">&nbsp;&nbsp;&nbsp;
+                <%= image.data_file_name %>
+              </label>
+            </p>
+            <p class="file-info">
+              <%= file_size(image) %>
+              <span class="circle-symbol">●</span>
+              <%= image.data_updated_at %>
+            </p>
+          </div>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</section>

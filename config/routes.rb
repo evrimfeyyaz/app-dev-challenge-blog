@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resource :sessions, only: [:create, :destroy]
     resources :posts, except: [:show]
     resources :categories, except: [:show]
-    resources :media
+    resources :images
   end
 end

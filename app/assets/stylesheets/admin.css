@@ -11,6 +11,13 @@ body {
   background-color: #f6f6f6;
 }
 
+.file-size {
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 25px;
+  color: #777;
+}
+
 .sidebar .sidebar-nav.navbar-collapse {
   padding-right: 0;
   padding-left: 0;

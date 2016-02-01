@@ -18,3 +18,6 @@
 
 # Ignore the preferences file.
 /config/preferences.yml
+
+# Ignore AWS secrets.
+/config/aws.yml
