@@ -1,36 +1,48 @@
-<section class="container-fluid">
-  <div class="row">
-    <div class="col-lg-8 col-md-10">
-      <h1>New Post</h1>
-      <%= form_for [:admin, @post] do |f| %>
-        <div class="form-group">
-          <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#chooseCoverImage">Choose Cover Image</a>
-          <img src="../img/post-1.jpg" alt="" class="img-responsive cover-thumbnail">
-        </div>
-        <div class="form-group">
-          <%= f.label :title, class: "sr-only" %>        
-          <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :category, class: "sr-only" %>
-          <%= f.select :category_id, category_options, {}, { class: "form-control" } %>
-        </div>
-        <div class="form-group">
-          <a href="#" class="btn btn-ctrl">Add Image</a>
-          <%= f.label :content, class: "sr-only" %>
-          <%= f.text_area :content, class: "form-control", rows: "15",  placeholder: "Content" %>
-        </div>
-        <div class="text-center">
-          <%= f.submit "Preview", name: "preview_button", class: "btn btn-default" %>
-          <%= f.submit "Save", class: "btn btn-primary"  %>
-          <% if @post.published_at.blank? %>
-            <%= f.submit "Save & Publish", name: "save_and_publish_button", class: "btn btn-warning"  %>
-          <% end %>
-          <% if @post.published_at %>
-            <%= f.submit "Unpublish", name: "unpublish_button", class: "btn btn-warning" %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+<%= form_for [:admin, @post] do |f| %>
+  <div class="form-group">
+    <%= link_to "Choose Cover Image", 
+                admin_images_path(mode: "cover_image"),
+                remote: true,
+                id: "chooseCoverImageButton",
+                class: "btn btn-primary btn-sm",
+                data: {
+                  toggle: "modal",
+                  target: "#chooseImageModal"
+                } %>
+    <%= link_to "Remove Cover Image", 
+                "#",
+                id: "removeCoverImageButton",
+                class: "btn btn-danger btn-sm" %>
+    <%= cover_image_thumbnail(@post) %>
+    <%= f.hidden_field :image_id %>
   </div>
-</section>
+  <div class="form-group">
+    <%= f.label :title, class: "sr-only" %>        
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category, class: "sr-only" %>
+    <%= f.select :category_id, category_options, {}, { class: "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= link_to "Add Image", 
+                admin_images_path(mode: "add_image"),
+                remote: true,
+                id: "addImageButton",
+                class: "btn btn-ctrl",
+                "data-toggle" => "modal",
+                "data-target" => "#chooseImageModal" %>
+    <%= f.label :content, class: "sr-only" %>
+    <%= f.text_area :content, class: "form-control", rows: "15",  placeholder: "Content" %>
+  </div>
+  <div class="text-center">
+    <%= f.submit "Preview", name: "preview_button", class: "btn btn-default" %>
+    <%= f.submit "Save", class: "btn btn-primary"  %>
+    <% if @post.published_at.blank? %>
+      <%= f.submit "Save & Publish", name: "save_and_publish_button", class: "btn btn-warning"  %>
+    <% end %>
+    <% if @post.published_at %>
+      <%= f.submit "Unpublish", name: "unpublish_button", class: "btn btn-warning" %>
+    <% end %>
+  </div>
+<% end %>

@@ -4,7 +4,11 @@
       <% posts.each do |post| %>
         <article class="grid-item col-sm-6 col-md-4">
           <div class="grid-item-content thumbnail">
-            <a href="#"><%= image_tag post.image, alt: post.title %></a>
+            <% if post.image %>
+              <%= link_to post do %>
+                <%= image_tag post.image.data.url(:thumb_2x), alt: post.title %>
+              <% end %>
+            <% end %>
             <div class="caption">
               <p class="meta">
                 <%= link_to post.category.title, post.category %>

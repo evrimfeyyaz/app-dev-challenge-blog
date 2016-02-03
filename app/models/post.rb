@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
   belongs_to :category
+  belongs_to :image
+
+  scope :published, -> { where.not(published_at: nil) }
 
   def previous_post
     Post.where("id < ?", id).order("id DESC").first
@@ -7,10 +10,5 @@ class Post < ActiveRecord::Base
 
   def next_post
     Post.where("id > ?", id).order("id ASC").first
-  end
-
-  # TODO: Implement paperclip.
-  def image
-    "test.jpg"
   end
 end

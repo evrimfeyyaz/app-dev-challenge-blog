@@ -1,0 +1,42 @@
+<div class="modal fade" id="chooseImageModal" tabindex="-1" role="dialog" aria-labelledby="chooseImageModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="chooseImageModal">Choose Image</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active"><a href="#images" aria-controls="home" role="tab" data-toggle="tab">Images</a></li>
+          <li role="presentation"><a href="#upload" aria-controls="home" role="tab" data-toggle="tab">Upload</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="images">
+            <div class="grid">
+              
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="upload">
+            <%= form_for [:admin, @image],
+                         html: { multipart: true },
+                         remote: true do |f| %>
+              <%= hidden_field_tag :choose_image_mode %>
+              <div class="form-group">
+                <%= f.label :data, class: "sr-only" %>        
+                <%= f.file_field :data,
+                                 class: "form-control",
+                                 placeholder: "Image" %>
+              </div>
+              <div class="text-center">
+                <%= f.submit "Upload", class: "btn btn-default" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+function loadImages() {
+  $('div#images div.grid').empty();
+  $("<%= j render('images') %>").appendTo('div#images div.grid');
+  var $container = $('.grid');
+  $container.masonry("reloadItems")
+  $container.masonry();
+}
+
+loadImages();
+
+$(".multi-selection").remove();
+$(".image-link").each(function() {
+  $(this).click(function(e) {
+    e.preventDefault();
+    $('#chooseImageModal').modal('hide');
+    <% if @mode == "cover_image" %>
+      $('img.cover-thumbnail').attr('src', $(this).data('thumb-2x-url'));
+      $('#post_image_id').val($(this).data('image-id'));
+      $('img.cover-thumbnail').show();
+    <% else %>
+      insertAtCaret('post_content', $(this).data('original-url'));
+    <% end %>
+  });
+});

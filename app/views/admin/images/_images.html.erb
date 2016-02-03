@@ -1,0 +1,36 @@
+<% @images.each do |image| %>
+  <article class="grid-item col-sm-6 col-md-4 medium">
+    <div class="grid-item-content thumbnail clearfix">
+      <div>
+        <%= link_to [:admin, image],
+                    class: "image-link",
+                    data: {
+                      thumb_2x_url: image.data.url(:thumb_2x),
+                      original_url: image.data.url,
+                      image_id: image.id
+                    } do %>
+          <%= image_tag image.data.url(:thumb_2x) %>
+        <% end %>
+      </div>
+      <div class="caption">
+        <p class="file-name">
+          <label class="small">
+            <span class="multi-selection">
+              <%= check_box_tag "image_ids[]",
+                                image.id,
+                                false,
+                                class: "select-element" %>
+              &nbsp;&nbsp;
+            </span>
+            <%= image.data_file_name %>
+          </label>
+        </p>
+        <p class="file-info">
+          <%= file_size(image) %>
+          <span class="circle-symbol">●</span>
+          <%= image.data_updated_at %>
+        </p>
+      </div>
+    </div>
+  </article>
+<% end %>

@@ -11,6 +11,14 @@ body {
   background-color: #f6f6f6;
 }
 
+.inline-block-form {
+  display: inline-block;
+}
+
+img.cover-thumbnail {
+  width: 350px;
+}
+
 .file-size {
   font-size: 13px;
   margin-top: -10px;

@@ -1,1 +1,10 @@
-<%= render 'form' %>
+<%= render 'image_modal' %>
+
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-md-10">
+      <h1>Edit Post <small>(<%= @post.title %>)</small></h1>
+        <%= render 'form' %>
+      </div>
+  </div>
+</section>

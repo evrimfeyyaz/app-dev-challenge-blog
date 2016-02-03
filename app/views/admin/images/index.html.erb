@@ -5,40 +5,24 @@
     </div>
     <div class="col-sm-10 text-right-md">
       <%= link_to "Upload Image", new_admin_image_path, class: "btn-admin btn btn-primary" %>
-      <a href="#" class="btn-admin btn btn-danger">Remove Selected</a>
+      <%= form_tag destroy_multiple_admin_images_path,
+                   method: :delete,
+                   class: 'inline-block-form',
+                   data: {
+                    confirm: "Are you sure you would like to remove selected images?"
+                   } do %>
+      <%= submit_tag "Remove Selected", class: "btn-admin btn btn-danger" %>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
       <label class="small select-all">
-        <input type="checkbox">&nbsp;&nbsp;&nbsp;Select All
+        <input type="checkbox" id="select-all">&nbsp;&nbsp;&nbsp;Select All
       </label>
     </div>
   </div>
   <div class="grid">
-    <% @images.each do |image| %>
-      <article class="grid-item col-sm-6 col-md-4 medium">
-        <div class="grid-item-content thumbnail clearfix">
-          <div>
-            <%= link_to [:admin, image] do %>
-              <%= image_tag image.data.url(:thumb_2x) %>
-            <% end %>
-          </div>
-          <div class="caption">
-            <p class="file-name">
-              <label class="small">
-                <input type="checkbox">&nbsp;&nbsp;&nbsp;
-                <%= image.data_file_name %>
-              </label>
-            </p>
-            <p class="file-info">
-              <%= file_size(image) %>
-              <span class="circle-symbol">●</span>
-              <%= image.data_updated_at %>
-            </p>
-          </div>
-        </div>
-      </article>
-    <% end %>
+    <%= render 'images' %>
   </div>
+      <% end %>
 </section>

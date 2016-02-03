@@ -7,6 +7,7 @@ class Admin::PostsController < Admin::BaseController
 
   def new
     @post = Post.new
+    @image = Image.new
   end
 
   def create
@@ -36,6 +37,7 @@ class Admin::PostsController < Admin::BaseController
 
   def edit
     @post = Post.find(params[:id])
+    @image = @post.image ? @post.image : Image.new
   end
 
   def update
@@ -80,6 +82,13 @@ class Admin::PostsController < Admin::BaseController
     redirect_to admin_posts_url
   end
 
+  def destroy_multiple
+    Post.destroy_all({ id: params[:post_ids] })
+
+    flash[:success] = "Selected posts successfully deleted."
+    redirect_to admin_posts_url
+  end
+
   private
 
     def preview_layout?
@@ -87,7 +96,7 @@ class Admin::PostsController < Admin::BaseController
     end
 
     def post_params
-      params.require(:post).permit(:title, :category_id, :content)
+      params.require(:post).permit(:title, :category_id, :content, :image_id)
     end
 
     def preview_post

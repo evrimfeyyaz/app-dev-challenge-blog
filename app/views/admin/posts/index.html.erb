@@ -5,7 +5,13 @@
     </div>
     <div class="col-sm-8 text-right-md">
       <%= link_to "New Post", new_admin_post_path, class: "btn-admin btn btn-primary" %>
-      <%= link_to "Remove Selected", admin_posts_path, class: "btn-admin btn btn-primary" %>
+      <%= form_tag destroy_multiple_admin_posts_path,
+                   method: :delete,
+                   class: 'inline-block-form',
+                   data: {
+                    confirm: "Are you sure you would like to remove selected posts?"
+                   } do %>
+      <%= submit_tag "Remove Selected", class: "btn-admin btn btn-danger" %>
     </div>
   </div>
   <div class="row">
@@ -14,7 +20,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th><input type="checkbox"></th>
+              <th><input type="checkbox" id="select-all"></th>
               <th>Title</th>
               <th>Category</th>
               <th>Date Created</th>
@@ -25,12 +31,25 @@
           <tbody>
             <% @posts.each do |post| %>
               <tr>
-                <td><input type="checkbox"></td>
+                <td>
+                  <%= check_box_tag "post_ids[]",
+                                post.id,
+                                false,
+                                class: "select-element" %>
+                </td>
                 <td><%= link_to post.title, post %></td>
                 <td><%= post.category.title %></td>
                 <td><%= post.created_at %></td>
                 <td><%= post.published_at %></td>
                 <td>
+                  <%= link_to edit_admin_post_path(post),
+                        class: 'action-icon',
+                        alt: "Edit post",
+                        "data-toggle" => "tooltip",
+                        "data-placement" => "top",
+                        title: "Edit post" do %>
+                    <i class="fa fa-pencil fa-fw"></i>
+                  <% end %>
                   <%= link_to [:admin, post],
                         class: 'action-icon',
                         alt: "Delete post",
@@ -41,17 +60,10 @@
                         data: { confirm: "Are you sure?" } do %>
                     <i class="fa fa-trash fa-fw"></i>
                   <% end %>
-                  <%= link_to edit_admin_post_path(post),
-                        class: 'action-icon',
-                        alt: "Edit post",
-                        "data-toggle" => "tooltip",
-                        "data-placement" => "top",
-                        title: "Edit post" do %>
-                    <i class="fa fa-pencil fa-fw"></i>
-                  <% end %>
                 </td>
               </tr>
             <% end %>
+          <% end %>
           </tbody>
         </table>
       </div>

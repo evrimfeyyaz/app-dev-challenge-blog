@@ -1,0 +1,8 @@
+$('#chooseImageModal').modal('hide');
+<% if @mode == "cover_image" %>
+  $('img.cover-thumbnail').attr('src', '<%= @thumb_2x_url %>');
+  $('#post_image_id').val('<%= @image_id %>');
+  $('img.cover-thumbnail').show();
+<% else %>
+  insertAtCaret('post_content', '<%= @original_url %>');
+<% end %>

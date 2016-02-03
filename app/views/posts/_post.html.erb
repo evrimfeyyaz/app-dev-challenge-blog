@@ -2,7 +2,7 @@
   <% if @post.image.present? %>
     <div class="row">
       <div class="col-lg-offset-1 col-lg-10">
-        <%= image_tag @post.image, alt: @post.title, class: 'post-image full-width' %>
+        <%= image_tag @post.image.data.url, alt: @post.title, class: 'post-image full-width' %>
       </div>  
     </div>
   <% end %>
