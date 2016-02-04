@@ -38,8 +38,8 @@
                   </td>
                   <td><%= link_to post.title, edit_admin_post_path(post) %></td>
                   <td><%= category(post) %></td>
-                  <td><%= post.created_at %></td>
-                  <td><%= post.published_at %></td>
+                  <td><%= format_time_admin(post.created_at) %></td>
+                  <td><%= format_time_admin(post.published_at) %></td>
                   <td>
                     <%= link_to edit_admin_post_path(post),
                           class: 'action-icon',

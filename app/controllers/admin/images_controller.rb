@@ -1,4 +1,6 @@
 class Admin::ImagesController < Admin::BaseController
+  before_action :set_image, only: [:show, :destroy]
+
   def index
     @images = Image.all
     @image = Image.new
@@ -32,18 +34,15 @@ class Admin::ImagesController < Admin::BaseController
       end
       
     else
-      flash[:danger] = "There were some errors during upload."
+      flash.now[:danger] = "There were some errors during upload."
       render 'new'
     end
   end
 
   def show
-    @image = Image.find(params[:id])
   end
 
   def destroy
-    # fail
-    @image = Image.find(params[:id])
     @image.destroy
 
     flash[:success] = "Image successfully deleted."
@@ -51,8 +50,6 @@ class Admin::ImagesController < Admin::BaseController
   end
 
   def destroy_multiple
-    # fail
-    # byebug
     Image.destroy_all({ id: params[:image_ids] })
 
     flash[:success] = "Selected images successfully deleted."
@@ -60,6 +57,10 @@ class Admin::ImagesController < Admin::BaseController
   end
 
   private
+
+    def set_image
+      @image = Image.find(params[:id])
+    end
 
     def image_params
       params.require(:image).permit(:data)

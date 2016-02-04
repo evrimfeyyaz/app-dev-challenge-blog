@@ -1,6 +1,8 @@
 class Admin::PostsController < Admin::BaseController
   layout :preview_layout?
 
+  before_action :set_post, only: [:edit, :update, :destroy]
+
   def index
     @posts = Post.all
   end
@@ -12,6 +14,7 @@ class Admin::PostsController < Admin::BaseController
 
   def create
     @post = Post.new(post_params)
+    @image = Image.new
 
     if params[:preview_button]
       preview_post
@@ -23,11 +26,13 @@ class Admin::PostsController < Admin::BaseController
       if (@post.save)
         if (params[:save_and_publish_button])
           flash[:success] = "Post successfully saved and published."
+
+          redirect_to admin_posts_url
         else
           flash[:success] = "Post successfully saved."
-        end
 
-        redirect_to admin_posts_url
+          redirect_to edit_admin_post_url(@post)
+        end
       else
         flash.now[:danger] = "There were some errors while saving."
         render 'new'
@@ -36,13 +41,10 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def edit
-    @post = Post.find(params[:id])
     @image = Image.new
   end
 
   def update
-    @post = Post.find(params[:id])
-
     if params[:unpublish_button]
       @post.update_attribute(:published_at, nil)
 
@@ -61,11 +63,13 @@ class Admin::PostsController < Admin::BaseController
         if (@post.save)
           if (params[:save_and_publish_button])
             flash[:success] = "Post successfully saved and published."
+
+            redirect_to admin_posts_url
           else
             flash[:success] = "Post successfully saved."
-          end
 
-          redirect_to admin_posts_url
+            redirect_to edit_admin_post_url(@post)
+          end
         else
           flash.now[:danger] = "There were some errors while saving."
           render 'edit'
@@ -75,7 +79,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
 
     flash[:success] = "Post successfully deleted."
@@ -90,6 +93,10 @@ class Admin::PostsController < Admin::BaseController
   end
 
   private
+
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
     def preview_layout?
       "application" if params[:preview_button]

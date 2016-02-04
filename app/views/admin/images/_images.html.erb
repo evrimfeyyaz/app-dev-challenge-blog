@@ -28,7 +28,7 @@
         <p class="file-info">
           <%= file_size(image) %>
           <span class="circle-symbol">●</span>
-          <%= image.data_updated_at %>
+          <%= format_time_admin(image.data_updated_at) %>
         </p>
       </div>
     </div>

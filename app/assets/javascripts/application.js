@@ -13,8 +13,10 @@
 //= require jquery_ujs
 //= require turbolinks
 
-$('.grid').masonry({
-  itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
-  columnWidth: '.grid-item',
-  percentPosition: true
+$(document).on('ready page:load', function() {
+  $('.grid').masonry({
+    itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
+    columnWidth: '.grid-item',
+    percentPosition: true
+  });
 });

@@ -1,8 +1,15 @@
 <% if posts.any? %>
   <section class="container">
+    <% if defined? title %>
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="posts-title"><%= title %></h1>
+        </div>
+      </div>
+    <% end %>
     <div class="grid">
       <% posts.each do |post| %>
-        <article class="grid-item col-sm-6 col-md-4">
+        <article class="grid-item col-xs-12 col-sm-6 col-md-4">
           <div class="grid-item-content thumbnail">
             <% if post.image %>
               <%= link_to post do %>
@@ -13,7 +20,7 @@
               <p class="meta">
                 <%= link_to_post_category(post) %>
                 <span class="circle-symbol">●</span>
-                <%= post.published_at %>
+                <%= format_time(post.published_at) %>
               </p>
               <h1 class="h2"><%= link_to post.title, post, class: 'post-title' %></h1></a>
               <p class="excerpt">

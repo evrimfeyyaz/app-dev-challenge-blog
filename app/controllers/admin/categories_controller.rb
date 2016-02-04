@@ -1,4 +1,6 @@
 class Admin::CategoriesController < Admin::BaseController
+  before_action :set_category, only: [:edit, :update, :destroy]
+
   def index
     @categories = Category.all
   end
@@ -20,12 +22,9 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def edit
-    @category = Category.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
-
     if @category.update(category_params)
       flash[:success] = "Category successfully updated."
       redirect_to admin_categories_url
@@ -36,7 +35,6 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def destroy
-    @category = Category.find(params[:id])
     @category.destroy
 
     flash[:success] = "Category successfully deleted."
@@ -51,6 +49,10 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   private
+
+    def set_category
+      @category = Category.find(params[:id])
+    end
 
     def category_params
       params.require(:category).permit(:title)

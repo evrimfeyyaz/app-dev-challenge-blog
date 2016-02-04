@@ -127,4 +127,11 @@ $(document).on('ready page:load', function() {
       $('#select-all').prop("checked", check);
     });
     // From http://stackoverflow.com/a/15880040
+
+    $('span[data-time').each(function() {
+      var date = $(this).data('time');
+      var formattedDate = moment(date).format("MMM Do YYYY, h:mm a");
+
+      $(this).text(formattedDate);
+    });
 });

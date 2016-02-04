@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "posts#index"
-  resources :posts, only: [:index, :show]
+  resources :posts, path: '', only: [:index, :show]
   resources :categories, only: [:show]
 
   namespace :admin do

@@ -5,7 +5,7 @@ module PostsHelper
 
   def published_at(post)
     if post.published_at
-      post.published_at
+      format_time(post.published_at)
     else
       "Not Published"
     end

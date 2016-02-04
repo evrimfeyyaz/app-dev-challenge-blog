@@ -36,7 +36,7 @@
                   </td>
                   <td><%= category.title %></td>
                   <td><%= category.posts_count %></td>
-                  <td><%= category.created_at %></td>
+                  <td><%= format_time_admin(category.created_at) %></td>
                   <td>
                     <%= link_to edit_admin_category_path(category),
                           class: 'action-icon',

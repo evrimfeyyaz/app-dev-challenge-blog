@@ -20,6 +20,15 @@ body {
   background-color: #f6f6f6;
 }
 
+.posts-title {
+  margin-left: 15px;
+  margin-top: -15px;
+}
+
+.post {
+  padding-top: 50px;
+}
+
 span.circle-symbol {
   margin-left: 5px;
   margin-right: 5px;
@@ -156,14 +165,14 @@ h1, h2, h3, h4, h5, h6,
 h1.headline {
   color: #fff;
   font-size: 42px;
-  line-height: 35px;
+  line-height: 38px;
   text-transform: uppercase;
 }
 
 h1.headline span {
   display: block;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 .headline-container {
@@ -172,8 +181,8 @@ h1.headline span {
   background: -webkit-radial-gradient(center, ellipse cover,  rgba(31,88,137,1) 0%,rgba(1,37,70,1) 100%);
   background: radial-gradient(ellipse at center,  rgba(31,88,137,1) 0%,rgba(1,37,70,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f5889', endColorstr='#012546',GradientType=1 );
-  padding-top: 4em;
-  padding-bottom: 1em;
+  padding-top: 3em;
+  padding-bottom: 1.5em;
 }
 
 .headline-container:before {
@@ -184,12 +193,12 @@ h1.headline span {
   top: 0;
   width: 100%;
   height: 100%;
-  max-height: 570px;
+  max-height: 500px;
   z-index: 0;
-  opacity: 0.2;
+  opacity: 0.15;
   background-image: url('blueprint.png');
   background-repeat: repeat;
-  background-position: 50% 0;
+  background-position: 50% 15%;
 }
 
 .mail-list-top p {
@@ -403,7 +412,7 @@ footer ul li a:focus {
 }
 
 .post .post-image {
-  margin-top: 80px;
+  margin-top: 20px;
 }
 
 .post p {
@@ -485,6 +494,10 @@ footer ul li a:focus {
 
 @media (min-width: 768px) {
 
+  .headline-container:before {
+    background-position: 50% 16%;
+  }
+
   h1.headline {
     font-size: 50px;
     line-height: 24px;
@@ -504,8 +517,8 @@ footer ul li a:focus {
   }
 
   .headline-container {
-    padding-top: 7em;
-    padding-bottom: 1.6em;
+    padding-top: 4.5em;
+    padding-bottom: 3em;
   }
 
   footer {
@@ -578,7 +591,8 @@ footer ul li a:focus {
 
   .post {
     font-size: 21px;
-    padding: 0 50px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .article-navigation li:first-child {
