@@ -42,6 +42,7 @@ class Admin::ImagesController < Admin::BaseController
   end
 
   def destroy
+    # fail
     @image = Image.find(params[:id])
     @image.destroy
 
@@ -50,6 +51,8 @@ class Admin::ImagesController < Admin::BaseController
   end
 
   def destroy_multiple
+    # fail
+    # byebug
     Image.destroy_all({ id: params[:image_ids] })
 
     flash[:success] = "Selected images successfully deleted."

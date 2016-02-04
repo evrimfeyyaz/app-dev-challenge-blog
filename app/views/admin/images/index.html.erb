@@ -1,28 +1,27 @@
 <section class="container-fluid">
-  <div class="row">
-    <div class="col-sm-2">
-      <h1>Images</h1>
+  <%= form_tag destroy_multiple_admin_images_path,
+             method: :delete,
+             data: {
+              confirm: "Are you sure you would like to remove selected images?"
+             } do %>
+    <div class="row">
+      <div class="col-sm-2">
+        <h1>Images</h1>
+      </div>
+      <div class="col-sm-10 text-right-md">
+        <%= link_to "Upload Image", new_admin_image_path, class: "btn-admin btn btn-primary" %>
+        <%= submit_tag "Remove Selected", class: "btn-admin btn btn-danger" %>
+      </div>
     </div>
-    <div class="col-sm-10 text-right-md">
-      <%= link_to "Upload Image", new_admin_image_path, class: "btn-admin btn btn-primary" %>
-      <%= form_tag destroy_multiple_admin_images_path,
-                   method: :delete,
-                   class: 'inline-block-form',
-                   data: {
-                    confirm: "Are you sure you would like to remove selected images?"
-                   } do %>
-      <%= submit_tag "Remove Selected", class: "btn-admin btn btn-danger" %>
+    <div class="row">
+      <div class="col-xs-12">
+        <label class="small select-all">
+          <input type="checkbox" id="select-all">&nbsp;&nbsp;&nbsp;Select All
+        </label>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <label class="small select-all">
-        <input type="checkbox" id="select-all">&nbsp;&nbsp;&nbsp;Select All
-      </label>
+    <div class="grid">
+      <%= render 'images' %>
     </div>
-  </div>
-  <div class="grid">
-    <%= render 'images' %>
-  </div>
-      <% end %>
+  <% end %>
 </section>

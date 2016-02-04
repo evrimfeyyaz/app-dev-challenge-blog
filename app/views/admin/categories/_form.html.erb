@@ -1,0 +1,9 @@
+<%= form_for [:admin, @category] do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "sr-only" %>        
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+  <div class="text-center">
+    <%= f.submit class: "btn btn-primary"  %>
+  </div>
+<% end %>

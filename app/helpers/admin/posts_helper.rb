@@ -1,13 +1,9 @@
 module Admin::PostsHelper
-  def category_options
-    if action_name == "edit"
-      placeholder = '<option disabled="">Category</option>'
-    else
-      placeholder = '<option selected="" disabled="">Category</option>'
-    end
+  def category_options(post)
+    uncategorized = '<option>Uncategorized</option>'
 
-    (placeholder +
-      options_from_collection_for_select(Category.all, :id, :title)).html_safe
+    (uncategorized +
+      options_from_collection_for_select(Category.all, :id, :title, post.category_id)).html_safe
   end
 
   def cover_image_thumbnail(post)
@@ -21,5 +17,9 @@ module Admin::PostsHelper
                 class: "img-responsive cover-thumbnail",
                 style: "display: none;"
     end
+  end
+
+  def category(post)
+    post.category ? post.category.title : "Uncategorized"
   end
 end

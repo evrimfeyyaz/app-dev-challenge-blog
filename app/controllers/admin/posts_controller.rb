@@ -37,7 +37,7 @@ class Admin::PostsController < Admin::BaseController
 
   def edit
     @post = Post.find(params[:id])
-    @image = @post.image ? @post.image : Image.new
+    @image = Image.new
   end
 
   def update

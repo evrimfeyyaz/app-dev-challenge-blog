@@ -11,7 +11,7 @@
             <% end %>
             <div class="caption">
               <p class="meta">
-                <%= link_to post.category.title, post.category %>
+                <%= link_to_post_category(post) %>
                 <span class="circle-symbol">●</span>
                 <%= post.published_at %>
               </p>

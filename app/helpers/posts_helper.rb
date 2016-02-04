@@ -10,4 +10,13 @@ module PostsHelper
       "Not Published"
     end
   end
+
+  def link_to_post_category(post)
+    if post.category
+      link_to post.category.title, post.category
+    else
+      # TODO: Add link to "uncategorized"
+      "Uncategorized"
+    end
+  end
 end

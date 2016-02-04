@@ -13,7 +13,11 @@ Rails.application.routes.draw do
         delete :destroy_multiple
       end
     end
-    resources :categories, except: [:show]
+    resources :categories, except: [:show] do
+      collection do
+        delete :destroy_multiple
+      end
+    end
     resources :images do
       collection do
         delete :destroy_multiple
