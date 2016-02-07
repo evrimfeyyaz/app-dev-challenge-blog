@@ -20,6 +20,22 @@ body {
   background-color: #f6f6f6;
 }
 
+i, cite, em, var, address, dfn {
+  font-style: normal;
+  color: #999;
+}
+
+.post img.post-image {
+  float: none;
+  width: 100%;
+  margin: 30px auto 0;
+}
+
+.post img {
+  width: 100%;
+  margin-bottom: 0;
+}
+
 .posts-title {
   margin-left: 15px;
   margin-top: -15px;
@@ -27,6 +43,35 @@ body {
 
 .post {
   padding-top: 50px;
+}
+
+.post blockquote {
+  padding: 0;
+  margin: 0 0 20px;
+  border-left: 0;
+  font-family: 'Alegreya Sans SC';
+  font-size: 24px;
+  color: #7e7e7e;
+}
+
+.post blockquote p {
+  line-height: 1.4
+}
+
+.post blockquote p:before {
+  content: '\201C';
+}
+
+.post blockquote p:after {
+  content: '\201D';
+}
+
+.post ul, .post ol {
+  margin-bottom: 20px;
+}
+
+.post pre {
+  margin-bottom: 20px;
 }
 
 span.circle-symbol {
@@ -400,55 +445,39 @@ footer ul li a:focus {
   margin: 0 auto;
 }
 
-.post .lead,
-.post .quote {
-  font-family: 'Alegreya Sans SC';
-  font-size: 24px;
-  line-height: 1.4;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.post .post-image {
-  margin-top: 20px;
-}
-
 .post p {
   margin-bottom: 20px;
   line-height: 1.8;
 }
 
-.post img {
-  margin-top: 20px;
+.post h1,
+.post h2,
+.post h3 {
+  margin-top: 30px;
 }
 
-.post h2 {
-  margin-top: 30px;
+.post h1 + h2,
+.post h2 + h3,
+.post h3 + h4 {
+  margin-top: 15px;
 }
 
 .post p.image-description {
   color: #7e7e7e;
   font-size: 14px;
-  margin: 10px 0 20px 0;
+  margin-top: -10px;
+  margin-bottom: 20px;
   line-height: 1.5;
+}
+
+.post-text p:nth-of-type(2) {
+  font-family: 'Alegreya Sans SC';
+  font-size: 24px;
+  line-height: 1.4;
 }
 
 .container.post {
   margin-bottom: 30px;
-}
-
-.quote {
-  color: #7e7e7e;
-}
-
-.quote:before {
-  content: '\201C';
-}
-
-.quote:after {
-  content: '\201D';
 }
 
 .mail-list-post {
@@ -464,6 +493,18 @@ footer ul li a:focus {
 .mail-list-post h1 {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.mail-list-post p {
+  line-height: 1.4;
+  margin: 5px auto 30px;
+}
+
+.mail-list-post p.fine-print {
+  font-family: 'Alegreya Sans SC';
+  font-size: 14px;
+  line-height: 1;
+  margin: 10px auto 0;
 }
 
 .article-navigation {
@@ -493,6 +534,10 @@ footer ul li a:focus {
 }
 
 @media (min-width: 768px) {
+
+  .post p.image-description {
+    margin-top: 10px;
+  }
 
   .headline-container:before {
     background-position: 50% 16%;
@@ -526,13 +571,24 @@ footer ul li a:focus {
     padding-bottom: 30px;
   }
 
-  .quote {
-    margin-left: -50px;
+  .post blockquote p {
     text-indent: -0.3em;
+  }
+
+  .post img,
+  .post .image-description,
+  .post blockquote {
+    float: left;
+    width: 120%;
+    margin-left: -60px;
   }
 
   .headline-container:before {
     max-height: 480px;
+  }
+
+  .mail-list-post {
+    margin-top: 15px;
   }
 
 }
@@ -604,4 +660,18 @@ footer ul li a:focus {
     margin: 0 15px 0;
   }
 
+  .post img,
+  .post .image-description,
+  .post blockquote {
+    margin-left: -72px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .post img,
+  .post .image-description,
+  .post blockquote {
+    margin-left: -70px;
+  }
 }

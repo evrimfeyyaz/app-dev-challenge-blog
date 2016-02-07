@@ -8,7 +8,7 @@
   <% end %>
 
   <div class="row">
-    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10">
+    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10 post-text">
       <h1 class="main-title text-center"><%= @post.title %></h1>
 
       <p class="meta text-center">
@@ -18,9 +18,10 @@
       </p>
     
       <%= markdown @post.content %>
+    </div>
   </div>
   <div class="row">
-    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10">
+    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10 col-xs-12">
       <div class="mail-list-post text-center">
         <h1>Enjoyed the Article?</h1>
         <section>
@@ -36,6 +37,9 @@
             </div>
             <button type="submit" class="btn btn-primary">Join the List</button>
           </form>
+          <p class="fine-print">
+            No spam. Unsubscribe any time.
+          </p>
         </section>
       </div>
     </div>

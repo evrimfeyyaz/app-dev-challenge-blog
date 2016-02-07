@@ -1,20 +1,22 @@
 <%= render 'post' %>
 
-<nav class="container article-navigation">
-  <div class="row">
-    <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10">
-      <ul class="list-inline">
-        <% if @post.previous_post %>
-          <li class="pull-left">
-            <%= link_to "&laquo; #{@post.previous_post.title}".html_safe, @post.previous_post %>
-          </li>
-        <% end %>
-        <% if @post.next_post %>
-          <li class="pull-right text-right">
-            <%= link_to "#{@post.next_post.title} &raquo;".html_safe, @post.next_post %>
-          </li>
-        <% end %>
-      </ul>
+<% if @post.previous_post || @post.next_post %>
+  <nav class="container article-navigation">
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8 col-sm-offset-1 col-sm-10">
+        <ul class="list-inline">
+          <% if @post.previous_post %>
+            <li class="pull-left">
+              <%= link_to "&laquo; #{@post.previous_post.title}".html_safe, @post.previous_post %>
+            </li>
+          <% end %>
+          <% if @post.next_post %>
+            <li class="pull-right text-right">
+              <%= link_to "#{@post.next_post.title} &raquo;".html_safe, @post.next_post %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+<% end %>
