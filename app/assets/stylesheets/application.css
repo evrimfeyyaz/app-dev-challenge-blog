@@ -25,6 +25,10 @@ i, cite, em, var, address, dfn {
   color: #999;
 }
 
+div#disqus_thread {
+  margin-top: 50px;
+}
+
 .post img.post-image {
   float: none;
   width: 100%;
@@ -484,7 +488,7 @@ footer ul li a:focus {
 .mail-list-post {
   background-color: #fff;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.2);
-  padding: 15px 15px 25px 15px;
+  padding: 25px 15px 25px 15px;
 }
 
 .mail-list-post input {
