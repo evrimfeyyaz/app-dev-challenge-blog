@@ -1,9 +1,0 @@
-production:
-  admin_password: test
-  contact_address: test@example.com
-development:
-  admin_password: test
-  contact_address: test@example.com
-test:
-  admin_password: test
-  contact_address: test@example.com

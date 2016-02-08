@@ -1,0 +1,13 @@
+default: &default
+  admin_password: <%= ENV["ADMIN_PASSWORD"] %>
+  contact_email_username: <%= ENV["CONTACT_EMAIL_USERNAME"] %>
+  contact_email_password: <%= ENV["CONTACT_EMAIL_PASSWORD"] %>
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+
+test:
+  <<: *default

@@ -1,5 +1,0 @@
-development:
-  secret_key: AWS_SECRET_KEY_ID
-
-production:
-  secret_key: AWS_SECRET_KEY_ID

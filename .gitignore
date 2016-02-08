@@ -16,9 +16,5 @@
 !/log/.keep
 /tmp
 
-# Ignore the preferences file.
-/config/preferences.yml
-
-# Ignore AWS and Google Recaptcha secrets.
-/config/aws.yml
-/config/recaptcha.yml
+# Ignore the environment variables file which is for development.
+/config/environment_variables.rb
