@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root to: "posts#index"
+
+  get  'contact', to: 'messages#new'
   resources :posts, path: '', only: [:index, :show]
   resources :categories, only: [:show]
+  resources :messages, only: [:create]
 
   namespace :admin do
     root to: "posts#index"

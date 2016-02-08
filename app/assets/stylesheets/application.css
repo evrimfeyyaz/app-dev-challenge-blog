@@ -131,6 +131,7 @@ li.social-icon i {
   -moz-transition: color 0.3s ease;
   -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
+  color: #fff;
 }
 
 li.social-icon i.fa-facebook:hover {
@@ -390,7 +391,7 @@ footer ul li a {
   border: none;
 }
 
-ul.social-icons.dark li a {
+ul.social-icons.dark li a i {
   color: #000;
 }
 

@@ -33,7 +33,23 @@ module AppDevChallenge
     config.active_record.raise_in_transactional_callbacks = true
 
     # Load the application preferences.
-    # TODO: Currently not working. Find the reason why.
     config.x.preferences = Rails.application.config_for(:preferences)
+
+    # Load the reCAPTCHA key.
+    config.x.recaptcha = Rails.application.config_for(:recaptcha)
+
+    config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      domain: "<appdevchallenge.com>",
+      user_name: Rails.configuration.x.preferences["contact_email_username"],
+      password: Rails.configuration.x.preferences["contact_email_password"],
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
+    config.action_mailer.default_url_options = {
+      host: "appdevchallenge.com"
+    }
+    config.action_mailer.raise_delivery_errors = true
   end
 end

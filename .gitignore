@@ -19,5 +19,6 @@
 # Ignore the preferences file.
 /config/preferences.yml
 
-# Ignore AWS secrets.
+# Ignore AWS and Google Recaptcha secrets.
 /config/aws.yml
+/config/recaptcha.yml

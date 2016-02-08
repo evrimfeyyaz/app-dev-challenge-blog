@@ -1,0 +1,36 @@
+<section class="container contact">
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-5 col-md-6 col-md-offset-1">
+      <h1>Contact Me</h1>
+      <%= form_for @message do |f| %>
+        <div class="form-group">
+          <%= f.label :name, class: "sr-only" %>        
+          <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, class: "sr-only" %>        
+          <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :content, class: "sr-only" %>
+          <%= f.text_area :content, class: "form-control", rows: "10", cols: "30",  placeholder: "Content" %>
+        </div>
+        <div class="g-recaptcha form-group" data-sitekey="6Ld7pBcTAAAAAP7e_5B_Fk0SA6iqiuXqREH2I7f2"></div>
+        <%= f.submit "Send", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+    <div class="col-md-4 col-lg-3 text-center">
+      <h1>Email Me</h1>
+      <p class="small">contact -at- appdevchallenge.com</p>
+
+      <h1>Social Media</h1>
+      <ul class="social-icons dark">
+          <li class="social-icon"><a href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
+          <li class="social-icon"><a href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
+          <li class="social-icon"><a href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
+          <li class="social-icon"><a href="#"><i class="fa fa-rss fa-fw"></i></a></li>
+        </ul>
+    </div>
+  </div>
+</section>
