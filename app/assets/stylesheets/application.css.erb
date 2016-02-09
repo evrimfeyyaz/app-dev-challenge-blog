@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= depend_on_asset "blueprint.png"
+ *
  *= require_self
  */
 
@@ -246,7 +248,7 @@ h1.headline span {
   max-height: 500px;
   z-index: 0;
   opacity: 0.15;
-  background-image: url('blueprint.png');
+  background-image: url(<%= asset_path("blueprint.png") %>);
   background-repeat: repeat;
   background-position: 50% 15%;
 }
