@@ -2,6 +2,7 @@ class Admin::PostsController < Admin::BaseController
   layout :preview_layout?
 
   before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :prepare_params, only: [:create, :update]
 
   def index
     @posts = Post.all
@@ -104,6 +105,12 @@ class Admin::PostsController < Admin::BaseController
 
     def post_params
       params.require(:post).permit(:title, :category_id, :content, :image_id)
+    end
+
+    def prepare_params
+      if !/\A\d+\z/.match(params[:post][:category_id])
+        params[:post][:category_id] = ""
+      end
     end
 
     def preview_post
