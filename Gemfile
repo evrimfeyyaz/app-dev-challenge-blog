@@ -32,7 +32,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'redcarpet', '~> 3.3'
-gem 'aws-sdk', '~> 2.2'
 gem 'paperclip', '~> 4.3'
 gem 'remotipart', '~> 1.2'
 gem 'friendly_id', '~> 5.1.0'
@@ -40,6 +39,7 @@ gem 'friendly_id', '~> 5.1.0'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'aws-sdk-v1', '~> 1.66'
 end
 
 group :development, :test do
