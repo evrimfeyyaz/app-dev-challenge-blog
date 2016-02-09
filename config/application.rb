@@ -32,6 +32,8 @@ module AppDevChallenge
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.watchable_dirs['lib'] = [:rb]
+
     # Load the environment before config.x if the file exists.
     environment_variables = File.join(Rails.root, 'config', 'environment_variables.rb')
     load(environment_variables) if File.exists?(environment_variables)
