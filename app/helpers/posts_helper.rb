@@ -1,5 +1,5 @@
 module PostsHelper
-  require_dependency 'lib/redcarpet/render_post_excerpt.rb'
+  require_dependency './lib/redcarpet/render_post_excerpt.rb'
 
   def markdown(text)
     Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(text).html_safe
