@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-offset-2 col-lg-5 col-md-6 col-md-offset-1">
       <h1>Contact Me</h1>
-      <%= form_for @message do |f| %>
+      <%= form_for @message, url: contact_path do |f| %>
         <div class="form-group">
           <%= f.label :name, class: "sr-only" %>        
           <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
