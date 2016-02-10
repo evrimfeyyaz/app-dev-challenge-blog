@@ -10,17 +10,9 @@
           <p class="text-center">
             I will share all my successes and failures, join my list to get updates. 
           </p>
-          <form class="form-inline">
-            <div class="form-group">
-              <label for="name" class="sr-only">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <label for="email" class="sr-only">E-Mail</label>
-              <input type="email" class="form-control" id="email" placeholder="E-Mail">
-            </div>
-            <button type="submit" class="btn btn-primary">Join the List</button>
-          </form>
+          <%= render 'layouts/maillist',
+                     form_name: "Header Signup Form",
+                     css_class: "form-inline" %>
         </section>
       </div>
     </div>

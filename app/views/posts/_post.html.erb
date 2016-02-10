@@ -28,15 +28,7 @@
           <p>
             I will share all my successes and failures, join my list to get updates. 
           </p>
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="E-Mail">
-            </div>
-            <button type="submit" class="btn btn-primary">Join the List</button>
-          </form>
+          <%= render 'layouts/maillist', form_name: "#{@post.id}-#{@post.title}" %>
           <p class="fine-print">
             No spam. Unsubscribe any time.
           </p>

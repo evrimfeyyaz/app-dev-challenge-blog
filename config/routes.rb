@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: "posts#index"
 
+  get  'feed', to: 'posts#index', defaults: { format: :atom }
   get  'contact', to: 'messages#new'
   post 'contact', to: 'messages#create'
   resources :posts, path: '', only: [:index, :show]

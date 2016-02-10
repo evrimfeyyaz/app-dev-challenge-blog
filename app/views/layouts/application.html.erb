@@ -12,6 +12,7 @@
   <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity: 'sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin: 'anonymous' %>
   <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', integrity: 'sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==', crossorigin: 'anonymous' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= auto_discovery_link_tag(:atom, feed_url) %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -40,14 +41,14 @@
         <li>
           <%= link_to "Contact Me", contact_path %>
         </li>
-        <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
         <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
-        <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
-        <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-rss fa-fw"></i></a></li>
-        <li class="visible-xs"><a href="#">Facebook</a></li>
+        <li class="social-icon hidden-xs">
+          <%= link_to feed_url do %>
+            <i class="fa fa-rss fa-fw"></i>
+          <% end %>
+        </li>
         <li class="visible-xs"><a href="#">Twitter</a></li>
-        <li class="visible-xs"><a href="#">Google+</a></li>
-        <li class="visible-xs"><a href="#">RSS</a></li>
+        <li class="visible-xs"><%= link_to "Atom Feed", feed_url %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -64,8 +65,8 @@
         <h1 class="h2 logo">AppDev<span class="logo-bold">Challenge</span></h1>
         <nav class="navbar-bottom">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Contact Me</a></li>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Contact Me", contact_path %></li>
           </ul>
         </nav>
       </div>
@@ -76,26 +77,25 @@
           <p class="text-center">
             I will share all my successes and failures, join my list to get updates. 
           </p>
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="E-Mail">
-            </div>
-            <button type="submit" class="btn btn-primary">Join the List</button>
-          </form>
+          <%= render 'layouts/maillist', form_name: "Footer Signup Form" %>
+          <p class="fine-print">
+            No spam. Unsubscribe any time.
+          </p>
         </section>
       </div>
 
       <div class="col-md-4">
         <h1 class="h2 hidden-xs hidden-sm">Follow Me</h1>
         <ul class="social-bottom list-inline">
-            <li class="social-icon"><a href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
-            <li class="social-icon"><a href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
-            <li class="social-icon"><a href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
-            <li class="social-icon"><a href="#"><i class="fa fa-rss fa-fw"></i></a></li>
-          </ul>
+          <li class="social-icon">
+            <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+          </li>
+          <li class="social-icon">
+            <%= link_to feed_url do %>
+              <i class="fa fa-rss fa-fw"></i>
+            <% end %>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
