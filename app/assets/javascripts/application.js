@@ -13,6 +13,12 @@
 //= require jquery_ujs
 //= require turbolinks
 
+var onloadCallback = function() {
+  grecaptcha.render('g-recaptcha', {
+    'sitekey' : '6Ld7pBcTAAAAAP7e_5B_Fk0SA6iqiuXqREH2I7f2'
+  });
+};
+
 $(document).on('ready page:load', function() {
   $('.grid').masonry({
     itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-

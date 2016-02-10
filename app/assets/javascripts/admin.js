@@ -2,6 +2,12 @@
 //= require jquery.remotipart
 //= require turbolinks
 
+var onloadCallback = function() {
+  grecaptcha.render('g-recaptcha', {
+    'sitekey' : '6Ld7pBcTAAAAAP7e_5B_Fk0SA6iqiuXqREH2I7f2'
+  });
+};
+
 // From http://web.archive.org/web/20110102112946/http://www.scottklarr.com/topic/425/how-to-insert-text-into-a-textarea-where-the-cursor-is/
 function insertAtCaret(areaId,text) {
     var txtarea = document.getElementById(areaId);
