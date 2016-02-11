@@ -18,3 +18,5 @@
 
 # Ignore the environment variables file which is for development.
 /config/environment_variables.rb
+
+/.env
