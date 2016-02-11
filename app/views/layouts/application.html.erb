@@ -42,13 +42,17 @@
         <li>
           <%= link_to "Contact Me", contact_path %>
         </li>
-        <li class="social-icon hidden-xs"><a href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
+        <li class="social-icon hidden-xs">
+          <%= link_to "http://twitter.com/appdevchallenge" do %>
+            <i class="fa fa-twitter fa-fw"></i>
+          <% end %>
+        </li>
         <li class="social-icon hidden-xs">
           <%= link_to feed_url do %>
             <i class="fa fa-rss fa-fw"></i>
           <% end %>
         </li>
-        <li class="visible-xs"><a href="#">Twitter</a></li>
+        <li class="visible-xs"><%= link_to "Twitter", "http://twitter.com/appdevchallenge" %></li>
         <li class="visible-xs"><%= link_to "Atom Feed", feed_url %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -89,7 +93,9 @@
         <h1 class="h2 hidden-xs hidden-sm">Follow Me</h1>
         <ul class="social-bottom list-inline">
           <li class="social-icon">
-            <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+            <%= link_to "http://twitter.com/appdevchallenge" do %>
+              <i class="fa fa-twitter fa-fw"></i>
+            <% end %>
           </li>
           <li class="social-icon">
             <%= link_to feed_url do %>

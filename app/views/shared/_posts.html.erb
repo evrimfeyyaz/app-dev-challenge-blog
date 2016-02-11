@@ -22,7 +22,7 @@
                 <span class="circle-symbol">●</span>
                 <%= format_time(post.published_at) %>
               </p>
-              <h1 class="h2"><%= link_to post.title, post, class: 'post-title' %></h1></a>
+              <h1 class="h2"><%= link_to post.title, post, class: 'post-title' %></h1>
               <p class="excerpt">
                 <%= excerpt_from_markdown(post.content) %>
               </p>
