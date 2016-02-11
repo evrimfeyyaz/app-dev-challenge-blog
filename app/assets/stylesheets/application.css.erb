@@ -31,6 +31,11 @@ div#disqus_thread {
   margin-top: 50px;
 }
 
+.posts.container,
+.post.container {
+  padding-bottom: 10px;
+}
+
 .post img.post-image {
   float: none;
   width: 100%;
@@ -583,11 +588,15 @@ p.fine-print {
   }
 
   .post img,
-  .post .image-description,
-  .post blockquote {
+  .post .image-description {
     float: left;
     width: 120%;
     margin-left: -60px;
+  }
+
+  .post blockquote {
+    width: 75%;
+    margin: 0 auto 20px;
   }
 
   .headline-container:before {
@@ -597,7 +606,6 @@ p.fine-print {
   .mail-list-post {
     margin-top: 15px;
   }
-
 }
 
 @media (min-width: 992px) {
@@ -668,17 +676,14 @@ p.fine-print {
   }
 
   .post img,
-  .post .image-description,
-  .post blockquote {
+  .post .image-description {
     margin-left: -72px;
   }
-
 }
 
 @media (min-width: 1200px) {
   .post img,
-  .post .image-description,
-  .post blockquote {
+  .post .image-description {
     margin-left: -70px;
   }
 }
