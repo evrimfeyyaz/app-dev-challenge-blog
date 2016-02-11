@@ -24,7 +24,7 @@
               </p>
               <h1 class="h2"><%= link_to post.title, post, class: 'post-title' %></h1></a>
               <p class="excerpt">
-                <%= excerpt(strip_markdown(post.content), '', separator: ' ', radius: 15) %>
+                <%= excerpt_from_markdown(post.content) %>
               </p>
             </div>
           </div>

@@ -14,6 +14,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= auto_discovery_link_tag(:atom, feed_url) %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/google_analytics' %>
 </head>
 <body>
 
@@ -105,6 +106,7 @@
 <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', integrity: "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin: "anonymous" %>
 <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56bc858005d769cf', async: true %>
 <%= javascript_include_tag('https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit').html_safe %>
 </body>
 </html>

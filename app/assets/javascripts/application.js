@@ -14,9 +14,11 @@
 //= require turbolinks
 
 var onloadCallback = function() {
-  grecaptcha.render('g-recaptcha', {
-    'sitekey' : '6Ld7pBcTAAAAAP7e_5B_Fk0SA6iqiuXqREH2I7f2'
-  });
+  if ($('#g-recaptcha').length) {
+    grecaptcha.render('g-recaptcha', {
+      'sitekey' : '6Ld7pBcTAAAAAP7e_5B_Fk0SA6iqiuXqREH2I7f2'
+    });
+  }
 };
 
 $(document).on('ready page:load', function() {

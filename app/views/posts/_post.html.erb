@@ -18,6 +18,9 @@
       </p>
     
       <%= markdown @post.content %>
+      <% if @post.persisted? %>
+        <div class="addthis_sharing_toolbox"></div>
+      <% end %>
     </div>
   </div>
   <div class="row">

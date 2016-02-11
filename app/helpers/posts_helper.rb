@@ -5,7 +5,7 @@ module PostsHelper
     Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(text).html_safe
   end
 
-  def strip_markdown(text)
+  def excerpt_from_markdown(text)
     Redcarpet::Markdown.new(PostExcerpt).render(text).html_safe
   end
 
