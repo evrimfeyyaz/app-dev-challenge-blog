@@ -1,1 +1,2 @@
-<%= render 'shared/posts', posts: @posts, title: "Posts in #{@category.title}" %>
+<% title "Posts in #{@category.title}" %>
+<%= render 'shared/posts', posts: @posts, header: "Posts in #{@category.title}" %>
