@@ -8,7 +8,9 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
 
-  scope :published, -> { where.not(published_at: nil) }
+  scope :published, -> {
+    where.not(published_at: nil).order(:published_at, :desc)
+  }
 
   def previous_post
     Post.where("id < ?", id).order("id DESC").first
