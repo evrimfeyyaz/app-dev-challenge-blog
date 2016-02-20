@@ -13,10 +13,7 @@
           <div class="grid-item-content thumbnail">
             <% if post.image %>
               <%= link_to post do %>
-                <%= image_tag post.image.data.url(:thumb_2x),
-                      alt: post.title,
-                      width: "350",
-                      height: "150" %>
+                <%= image_tag post.image.data.url(:thumb_2x), alt: post.title %>
               <% end %>
             <% end %>
             <div class="caption">
