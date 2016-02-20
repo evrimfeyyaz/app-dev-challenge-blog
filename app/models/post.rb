@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
 
   scope :published, -> {
-    where.not(published_at: nil).order(:published_at, :desc)
+    where.not(published_at: nil).order(published_at: :desc)
   }
 
   def previous_post
