@@ -2,7 +2,7 @@ module PostsHelper
   require_dependency './lib/redcarpet/render_post_excerpt.rb'
 
   def markdown(text)
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(text).html_safe
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true).render(text).html_safe
   end
 
   def excerpt_from_markdown(text)
