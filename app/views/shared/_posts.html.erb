@@ -13,7 +13,7 @@
           <div class="grid-item-content thumbnail">
             <% if post.image %>
               <%= link_to post do %>
-                <%= image_tag post.image.data.url(:thumb_2x), alt: post.title %>
+                <%= image_tag post.image.data.url(:thumb_2x), alt: post.title_without_html %>
               <% end %>
             <% end %>
             <div class="caption">
@@ -22,7 +22,7 @@
                 <span class="circle-symbol">●</span>
                 <%= format_time(post.published_at) %>
               </p>
-              <h1 class="h2"><%= link_to post.title, post, class: 'post-title' %></h1>
+              <h1 class="h2"><%= link_to post.title_without_html, post, class: 'post-title' %></h1>
               <p class="excerpt">
                 <%= excerpt_from_markdown(post.content) %>
               </p>

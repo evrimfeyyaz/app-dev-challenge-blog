@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title_without_html, use: :slugged
 
   belongs_to :category, counter_cache: true
   belongs_to :image
@@ -22,5 +22,9 @@ class Post < ActiveRecord::Base
 
   def published?
     self.published_at
+  end
+
+  def title_without_html
+    ActionView::Base.full_sanitizer.sanitize(title)
   end
 end
