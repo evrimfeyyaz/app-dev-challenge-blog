@@ -22,9 +22,15 @@ var onloadCallback = function() {
 };
 
 $(document).on('ready page:load', function() {
-  $('.grid').masonry({
+  var $grid = $('.grid')
+  
+  $grid.masonry({
     itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
     columnWidth: '.grid-item',
     percentPosition: true
+  });
+
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
   });
 });

@@ -110,8 +110,9 @@ $(document).on('ready page:load', function() {
     })
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      $container.masonry("reloadItems")
-      $container.masonry();
+      $container.imagesLoaded().progress( function() {
+        $container.masonry('layout');
+      });
     });
 
     $('#removeCoverImageButton').click(function(e) {
